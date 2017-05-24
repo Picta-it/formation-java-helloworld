@@ -83,9 +83,25 @@
 		          <redirectTestOutputToFile>true</redirectTestOutputToFile>
 		      </configuration>
       </plugin>
+
 		</plugins>
 
 	</build>
+
+  <reporting>
+
+	    <plugins>
+		      <plugin>
+			        <groupId>org.apache.maven.plugins</groupId>
+			        <artifactId>maven-surefire-report-plugin</artifactId>
+			        <version>2.20</version>
+			        <configuration>
+			          	<outputDirectory>${basedir}/report</outputDirectory>
+			        </configuration>
+		      </plugin>
+	    </plugins>
+
+  </reporting>
 
 	<dependencies>
 		<!-- hibernate -->
@@ -148,6 +164,13 @@
 		    <groupId>junit</groupId>
 		    <artifactId>junit</artifactId>
 		    <version>4.4</version>
+		</dependency>
+
+		<dependency>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-surefire-report-plugin</artifactId>
+			  <version>2.20</version>
+			  <type>maven-plugin</type>
 		</dependency>
 
 	</dependencies>
